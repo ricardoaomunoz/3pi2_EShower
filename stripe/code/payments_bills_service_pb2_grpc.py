@@ -135,7 +135,7 @@ class CustomersStub(object):
     self.GetCustomerById = channel.unary_unary(
         '/payments_bills_service.Customers/GetCustomerById',
         request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+        response_deserializer=payments__bills__service__pb2.CustomerObject.FromString,
         )
     self.GetCustomesList = channel.unary_stream(
         '/payments_bills_service.Customers/GetCustomesList',
@@ -192,7 +192,7 @@ def add_CustomersServicer_to_server(servicer, server):
       'GetCustomerById': grpc.unary_unary_rpc_method_handler(
           servicer.GetCustomerById,
           request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
-          response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+          response_serializer=payments__bills__service__pb2.CustomerObject.SerializeToString,
       ),
       'GetCustomesList': grpc.unary_stream_rpc_method_handler(
           servicer.GetCustomesList,

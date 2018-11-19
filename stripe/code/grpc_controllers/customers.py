@@ -11,7 +11,7 @@ class CustomersServicer(payments_bills_service_pb2_grpc.CustomersServicer):
     def GetCustomerById(self, request, context):
         try:
             ans = self.customer.GetById(request.id)
-            return json_to_grpc(str(ans))
+            return json_to_grpc_customer(str(ans))
         except stripe.error.CardError as e:
             print(e)
             

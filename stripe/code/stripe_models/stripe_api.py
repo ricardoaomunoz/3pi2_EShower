@@ -10,6 +10,7 @@ import os
 #print ("first: ", stripe.Charge.retrieve("ch_1DVf9y2eZvKYlo2CdNCnredz", expand=['customer']))
 class Stripe():
     def __init__(self):
+        
         stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
 
 

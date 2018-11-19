@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='payments_bills_service',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1cpayments-bills-service.proto\x12\x16payments_bills_service\x1a\x19google/protobuf/any.proto\x1a\x1bgoogle/protobuf/empty.proto\"r\n\x0bListRequest\x12\r\n\x05limit\x18\x01 \x01(\x04\x12\x0c\n\x04skip\x18\x02 \x01(\x04\x12\x10\n\x08\x63ustomer\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\x04 \x01(\t\x12$\n\x06\x66ilter\x18\x05 \x01(\x0b\x32\x14.google.protobuf.Any\"c\n\rGetByIdCharge\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06object\x18\x02 \x01(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\x04\x12\x10\n\x08\x63ustomer\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"~\n\x0c\x43hargeObject\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x04\x12\x10\n\x08\x63urrency\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x10\n\x08\x63ustomer\x18\x05 \x01(\t\x12\x15\n\rreceipt_email\x18\x06 \x01(\t2\xf0\x03\n\x07\x43harges\x12\x65\n\x16\x43reateChargeToCustomer\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12\x63\n\x14\x43reateChargeToSource\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12\\\n\rGetChargeById\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject\x12\\\n\rGetChargeList\x12#.payments_bills_service.ListRequest\x1a$.payments_bills_service.ChargeObject0\x01\x12]\n\x0e\x45\x64itChargeById\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject2\x89\x03\n\tCustomers\x12^\n\x0fGetCustomerById\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject\x12^\n\x0fGetCustomesList\x12#.payments_bills_service.ListRequest\x1a$.payments_bills_service.ChargeObject0\x01\x12]\n\x0e\x43reateCustomer\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12]\n\x0e\x44\x65leteCustomer\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject2\xf9\x03\n\x0bSuscription\x12\x61\n\x12GetSuscriptionById\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject\x12\x61\n\x12GetSuscriptionList\x12#.payments_bills_service.ListRequest\x1a$.payments_bills_service.ChargeObject0\x01\x12`\n\x11\x43reateSuscription\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12`\n\x11\x43\x61ncelSuscription\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject\x12`\n\x11UpdateSuscription\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObjectb\x06proto3')
+  serialized_pb=_b('\n\x1cpayments-bills-service.proto\x12\x16payments_bills_service\x1a\x19google/protobuf/any.proto\x1a\x1bgoogle/protobuf/empty.proto\"r\n\x0bListRequest\x12\r\n\x05limit\x18\x01 \x01(\x04\x12\x0c\n\x04skip\x18\x02 \x01(\x04\x12\x10\n\x08\x63ustomer\x18\x03 \x01(\t\x12\x0e\n\x06source\x18\x04 \x01(\t\x12$\n\x06\x66ilter\x18\x05 \x01(\x0b\x32\x14.google.protobuf.Any\"c\n\rGetByIdCharge\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06object\x18\x02 \x01(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\x04\x12\x10\n\x08\x63ustomer\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"~\n\x0c\x43hargeObject\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x04\x12\x10\n\x08\x63urrency\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x10\n\x08\x63ustomer\x18\x05 \x01(\t\x12\x15\n\rreceipt_email\x18\x06 \x01(\t\"n\n\x0bPlansObject\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06object\x18\x02 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x03 \x01(\x08\x12\x0f\n\x07\x63reated\x18\x04 \x01(\x04\x12\x10\n\x08\x63urrency\x18\x05 \x01(\t\x12\x10\n\x08interval\x18\x06 \x01(\t\"\x9d\x01\n\x12SuscriptionsObject\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06object\x18\x02 \x01(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\x04\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x12\n\ncustomerId\x18\x05 \x01(\t\x12\x31\n\x04plan\x18\x06 \x01(\x0b\x32#.payments_bills_service.PlansObject\"\x94\x01\n\x0e\x43ustomerObject\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06object\x18\x02 \x01(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\x04\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12@\n\x0csuscriptions\x18\x06 \x01(\x0b\x32*.payments_bills_service.SuscriptionsObject2\xf0\x03\n\x07\x43harges\x12\x65\n\x16\x43reateChargeToCustomer\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12\x63\n\x14\x43reateChargeToSource\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12\\\n\rGetChargeById\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject\x12\\\n\rGetChargeList\x12#.payments_bills_service.ListRequest\x1a$.payments_bills_service.ChargeObject0\x01\x12]\n\x0e\x45\x64itChargeById\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject2\x8b\x03\n\tCustomers\x12`\n\x0fGetCustomerById\x12%.payments_bills_service.GetByIdCharge\x1a&.payments_bills_service.CustomerObject\x12^\n\x0fGetCustomesList\x12#.payments_bills_service.ListRequest\x1a$.payments_bills_service.ChargeObject0\x01\x12]\n\x0e\x43reateCustomer\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12]\n\x0e\x44\x65leteCustomer\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject2\xf9\x03\n\x0bSuscription\x12\x61\n\x12GetSuscriptionById\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject\x12\x61\n\x12GetSuscriptionList\x12#.payments_bills_service.ListRequest\x1a$.payments_bills_service.ChargeObject0\x01\x12`\n\x11\x43reateSuscription\x12$.payments_bills_service.ChargeObject\x1a%.payments_bills_service.GetByIdCharge\x12`\n\x11\x43\x61ncelSuscription\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObject\x12`\n\x11UpdateSuscription\x12%.payments_bills_service.GetByIdCharge\x1a$.payments_bills_service.ChargeObjectb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -211,10 +211,206 @@ _CHARGEOBJECT = _descriptor.Descriptor(
   serialized_end=455,
 )
 
+
+_PLANSOBJECT = _descriptor.Descriptor(
+  name='PlansObject',
+  full_name='payments_bills_service.PlansObject',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='payments_bills_service.PlansObject.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='object', full_name='payments_bills_service.PlansObject.object', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='active', full_name='payments_bills_service.PlansObject.active', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='payments_bills_service.PlansObject.created', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='currency', full_name='payments_bills_service.PlansObject.currency', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='interval', full_name='payments_bills_service.PlansObject.interval', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=457,
+  serialized_end=567,
+)
+
+
+_SUSCRIPTIONSOBJECT = _descriptor.Descriptor(
+  name='SuscriptionsObject',
+  full_name='payments_bills_service.SuscriptionsObject',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='payments_bills_service.SuscriptionsObject.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='object', full_name='payments_bills_service.SuscriptionsObject.object', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='payments_bills_service.SuscriptionsObject.created', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='payments_bills_service.SuscriptionsObject.description', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='customerId', full_name='payments_bills_service.SuscriptionsObject.customerId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='plan', full_name='payments_bills_service.SuscriptionsObject.plan', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=570,
+  serialized_end=727,
+)
+
+
+_CUSTOMEROBJECT = _descriptor.Descriptor(
+  name='CustomerObject',
+  full_name='payments_bills_service.CustomerObject',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='payments_bills_service.CustomerObject.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='object', full_name='payments_bills_service.CustomerObject.object', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='payments_bills_service.CustomerObject.created', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='payments_bills_service.CustomerObject.description', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='suscriptions', full_name='payments_bills_service.CustomerObject.suscriptions', index=4,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=730,
+  serialized_end=878,
+)
+
 _LISTREQUEST.fields_by_name['filter'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_SUSCRIPTIONSOBJECT.fields_by_name['plan'].message_type = _PLANSOBJECT
+_CUSTOMEROBJECT.fields_by_name['suscriptions'].message_type = _SUSCRIPTIONSOBJECT
 DESCRIPTOR.message_types_by_name['ListRequest'] = _LISTREQUEST
 DESCRIPTOR.message_types_by_name['GetByIdCharge'] = _GETBYIDCHARGE
 DESCRIPTOR.message_types_by_name['ChargeObject'] = _CHARGEOBJECT
+DESCRIPTOR.message_types_by_name['PlansObject'] = _PLANSOBJECT
+DESCRIPTOR.message_types_by_name['SuscriptionsObject'] = _SUSCRIPTIONSOBJECT
+DESCRIPTOR.message_types_by_name['CustomerObject'] = _CUSTOMEROBJECT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListRequest = _reflection.GeneratedProtocolMessageType('ListRequest', (_message.Message,), dict(
@@ -238,6 +434,27 @@ ChargeObject = _reflection.GeneratedProtocolMessageType('ChargeObject', (_messag
   ))
 _sym_db.RegisterMessage(ChargeObject)
 
+PlansObject = _reflection.GeneratedProtocolMessageType('PlansObject', (_message.Message,), dict(
+  DESCRIPTOR = _PLANSOBJECT,
+  __module__ = 'payments_bills_service_pb2'
+  # @@protoc_insertion_point(class_scope:payments_bills_service.PlansObject)
+  ))
+_sym_db.RegisterMessage(PlansObject)
+
+SuscriptionsObject = _reflection.GeneratedProtocolMessageType('SuscriptionsObject', (_message.Message,), dict(
+  DESCRIPTOR = _SUSCRIPTIONSOBJECT,
+  __module__ = 'payments_bills_service_pb2'
+  # @@protoc_insertion_point(class_scope:payments_bills_service.SuscriptionsObject)
+  ))
+_sym_db.RegisterMessage(SuscriptionsObject)
+
+CustomerObject = _reflection.GeneratedProtocolMessageType('CustomerObject', (_message.Message,), dict(
+  DESCRIPTOR = _CUSTOMEROBJECT,
+  __module__ = 'payments_bills_service_pb2'
+  # @@protoc_insertion_point(class_scope:payments_bills_service.CustomerObject)
+  ))
+_sym_db.RegisterMessage(CustomerObject)
+
 
 
 _CHARGES = _descriptor.ServiceDescriptor(
@@ -246,8 +463,8 @@ _CHARGES = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=458,
-  serialized_end=954,
+  serialized_start=881,
+  serialized_end=1377,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateChargeToCustomer',
@@ -306,8 +523,8 @@ _CUSTOMERS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=957,
-  serialized_end=1350,
+  serialized_start=1380,
+  serialized_end=1775,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetCustomerById',
@@ -315,7 +532,7 @@ _CUSTOMERS = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_GETBYIDCHARGE,
-    output_type=_CHARGEOBJECT,
+    output_type=_CUSTOMEROBJECT,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -357,8 +574,8 @@ _SUSCRIPTION = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=2,
   serialized_options=None,
-  serialized_start=1353,
-  serialized_end=1858,
+  serialized_start=1778,
+  serialized_end=2283,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetSuscriptionById',

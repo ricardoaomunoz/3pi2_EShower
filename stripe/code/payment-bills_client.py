@@ -18,20 +18,21 @@ def create_a_charge(stub):
 
 
 def get_customer(stub):
-        getid = payments_bills_service_pb2.GetByIdCharge(id="ch_1DY40t2eZvKYlo2CBcSeU9CC")
+        getid = payments_bills_service_pb2.GetByIdCharge(id="cus_E05uw5emgkEtwi")#"ch_1DY40t2eZvKYlo2CBcSeU9CC")
         return_customer = stub.GetCustomerById(getid)
         print("object returned", return_customer)
-        
+
 def run():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = payments_bills_service_pb2_grpc.ChargesStub(channel)
+        stub1 = payments_bills_service_pb2_grpc.CustomersStub(channel)
         print("-------------- Make a Charge --------------")
-        create_a_charge(stub)
-        # print("-------------- ListFeatures --------------")
-        # guide_list_features(stub)
+        # create_a_charge(stub)
+        print("-------------- get customer --------------")
+        get_customer(stub1)
         # print("-------------- RecordRoute --------------")
         # guide_record_route(stub)
         # print("-------------- RouteChat --------------")

@@ -25,14 +25,14 @@ def createcharge(cantidad, moneda, fuente, descripcion):
 #print(stripe.Balance.retrieve())
 
 #charge = createcharge(100, "usd", "tok_visa", "Carga example")
-list_arguments=dict(limit=3)
-print(list_arguments)
-print (type(list_arguments))
-#print("id de carga: ", charge.id)
-for key in list_arguments:  
-     print (key, type(key))
-     print (list_arguments[key], type(list_arguments[key]))
-customerById = stripe.Customer.list(limit='')
+# list_arguments=dict(limit=3)
+# print(list_arguments)
+# print (type(list_arguments))
+# #print("id de carga: ", charge.id)
+# for key in list_arguments:  
+#      print (key, type(key))
+#      print (list_arguments[key], type(list_arguments[key]))
+customerById = stripe.Customer.list()
 print("Customers: ", customerById)
 print(type(customerById))
 # #Return the details of a specific charge_id
