@@ -1,0 +1,38 @@
+Stripe
+
+INDEMPOTENCIA
+-----------------
+En matemática y lógica, la idempotencia es la propiedad para realizar una acción determinada varias veces y aun así conseguir el mismo resultado que se obtendría si se realizase una sola vez. Un elemento que cumple esta propiedad es un elemento idempotente, o un idempotente.
+La API admite idempotencia para reintentar de forma segura las solicitudes sin realizar la misma operación dos veces por accidente. Esto es útil cuando una llamada a la API se interrumpe durante el tránsito y no recibe una respuesta. Por ejemplo, si una solicitud para crear un cargo falla debido a un error de conexión de red, puede reintentar la solicitud con la misma clave de idempotencia para garantizar que solo se crea un solo cargo.
+
+QUE SE PUEDE CREAR CON STRIPE
+-----------------------------------
+- Generaar un balance de la cuenta
+Metodos de PAgo: (el saldo actual en su cuenta de Stripe, También puede recuperar el historial de saldo, que contiene una lista de transacciones que contribuyeron al saldo (cargos, pagos, etc.), Los montos disponibles y pendientes para cada moneda se desglosan en función de los tipos de fuente de pago.)
+
+
+- Suscripciones recurrentes !!! ???????
+
+
+Cards
+3D Secure
+Alipay
+ACH Credit Transfers --> push method
+Bancontact
+EPS
+Giropay
+ISEAL
+Multibanco
+Przelewy24
+
+
+Confirmación síncrona o asíncrona
+-----------------------------------
+Una vez que use un método de pago para crear un objeto de Cargo, el estado de ese cargo se puede confirmar de forma inmediata (sincrónica) o después de un cierto tiempo (de forma asíncrona).
+
+Con un método de pago síncrono, el estado de la solicitud de cargo se puede confirmar inmediatamente como exitoso o fallido. Si la solicitud de cargo se realiza correctamente, el pago se completa: se considera garantizado que se le ha cobrado al cliente y que usted recibirá los fondos. Los pagos con tarjeta son un ejemplo de un método de pago sincrónico: hay confirmación en tiempo real del éxito o fracaso del pago.
+
+Para los métodos de pago asíncronos, puede llevar varios días confirmar si el pago se realizó correctamente. Durante este tiempo, el pago no puede ser garantizado. El estado del objeto Cargo del pago inicialmente se establece como pendiente, hasta que el pago se haya confirmado como exitoso o fallido. Los débitos de ACH son un ejemplo de un método asíncrono: con estos débitos, se necesitan unos días para confirmar que el pago se realizó correctamente.
+
+Stripe envía un evento de webhook una vez que el estado de un cargo ha cambiado. Al aceptar cualquier método de pago que sea asíncrono, su integración debe poder recibir webhooks, para que pueda recibir esta notificación y confirmar si el pago del cliente fue exitoso o no.
+

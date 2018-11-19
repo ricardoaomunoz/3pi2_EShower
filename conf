@@ -1,0 +1,10 @@
+Stripe plataforma para hacer una pasarela de pagos (como pyout)
+gearPC -> RPC
+MYSQL
+middleword -> rest
+stripe -> devolucion se ve como pago negativo o es algo a parte
+
+notificar un evento con gearPC
+
+python -m grpc_tools.protoc -I../../proto-files/src --python_out=. --grpc_python_out=. ../../proto-files/src/payments-bills-service.proto
+

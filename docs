@@ -1,0 +1,13 @@
+Servicios
+
+-PAGOS {Agregar, Editar, Consultar}
+-METODOS DE PAGO {Agregar, Editar, Consultar, Borrar} 
+-CLIENTES {Agregar, Editar, Consultar, Borrar}
+-DEVOLUCIONES {Agregar, Editar, Consultar}
+-FACTURAS {Agregar, Editar, Consultar..... (definir mas funcionalidades)}
+
+Implementacion Grpc y en Api_Rest
+
+Falta por definir --> Consultas realizadas por parte de la Api_Rest
+
+Lo que llevo ... tengo las funciones que realizan pagos, agregan editan y consultan falta la implementacion de Grpc y de la Api_rest dependiendo de las consultas que se realicen, fecha de culminación de los 5 servicios 23 de Nov
