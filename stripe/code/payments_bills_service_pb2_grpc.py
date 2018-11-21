@@ -31,7 +31,7 @@ class ChargesStub(object):
     self.GetChargeById = channel.unary_unary(
         '/payments_bills_service.Charges/GetChargeById',
         request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+        response_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
         )
     self.GetChargeList = channel.unary_stream(
         '/payments_bills_service.Charges/GetChargeList',
@@ -104,7 +104,7 @@ def add_ChargesServicer_to_server(servicer, server):
       'GetChargeById': grpc.unary_unary_rpc_method_handler(
           servicer.GetChargeById,
           request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
-          response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+          response_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
       ),
       'GetChargeList': grpc.unary_stream_rpc_method_handler(
           servicer.GetChargeList,
@@ -140,17 +140,17 @@ class CustomersStub(object):
     self.GetCustomesList = channel.unary_stream(
         '/payments_bills_service.Customers/GetCustomesList',
         request_serializer=payments__bills__service__pb2.ListRequest.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+        response_deserializer=payments__bills__service__pb2.CustomerObject.FromString,
         )
     self.CreateCustomer = channel.unary_unary(
         '/payments_bills_service.Customers/CreateCustomer',
-        request_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+        request_serializer=payments__bills__service__pb2.CustomerObject.SerializeToString,
         response_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
         )
     self.DeleteCustomer = channel.unary_unary(
         '/payments_bills_service.Customers/DeleteCustomer',
         request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+        response_deserializer=payments__bills__service__pb2.DeleteObject.FromString,
         )
 
 
@@ -197,17 +197,17 @@ def add_CustomersServicer_to_server(servicer, server):
       'GetCustomesList': grpc.unary_stream_rpc_method_handler(
           servicer.GetCustomesList,
           request_deserializer=payments__bills__service__pb2.ListRequest.FromString,
-          response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+          response_serializer=payments__bills__service__pb2.CustomerObject.SerializeToString,
       ),
       'CreateCustomer': grpc.unary_unary_rpc_method_handler(
           servicer.CreateCustomer,
-          request_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+          request_deserializer=payments__bills__service__pb2.CustomerObject.FromString,
           response_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
       ),
       'DeleteCustomer': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteCustomer,
           request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
-          response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+          response_serializer=payments__bills__service__pb2.DeleteObject.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
@@ -215,7 +215,7 @@ def add_CustomersServicer_to_server(servicer, server):
   server.add_generic_rpc_handlers((generic_handler,))
 
 
-class SuscriptionStub(object):
+class SubscriptionStub(object):
   # missing associated documentation comment in .proto file
   pass
 
@@ -225,66 +225,66 @@ class SuscriptionStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.GetSuscriptionById = channel.unary_unary(
-        '/payments_bills_service.Suscription/GetSuscriptionById',
+    self.GetSubscriptionById = channel.unary_unary(
+        '/payments_bills_service.Subscription/GetSubscriptionById',
         request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+        response_deserializer=payments__bills__service__pb2.SubscriptionsObject.FromString,
         )
-    self.GetSuscriptionList = channel.unary_stream(
-        '/payments_bills_service.Suscription/GetSuscriptionList',
+    self.GetSubscriptionList = channel.unary_stream(
+        '/payments_bills_service.Subscription/GetSubscriptionList',
         request_serializer=payments__bills__service__pb2.ListRequest.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+        response_deserializer=payments__bills__service__pb2.SubscriptionsObject.FromString,
         )
-    self.CreateSuscription = channel.unary_unary(
-        '/payments_bills_service.Suscription/CreateSuscription',
-        request_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
+    self.CreateSubscription = channel.unary_unary(
+        '/payments_bills_service.Subscription/CreateSubscription',
+        request_serializer=payments__bills__service__pb2.SubscriptionsObject.SerializeToString,
+        response_deserializer=payments__bills__service__pb2.SubscriptionsObject.FromString,
         )
-    self.CancelSuscription = channel.unary_unary(
-        '/payments_bills_service.Suscription/CancelSuscription',
+    self.CancelSubscription = channel.unary_unary(
+        '/payments_bills_service.Subscription/CancelSubscription',
         request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
         response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
         )
-    self.UpdateSuscription = channel.unary_unary(
-        '/payments_bills_service.Suscription/UpdateSuscription',
+    self.UpdateSubscription = channel.unary_unary(
+        '/payments_bills_service.Subscription/UpdateSubscription',
         request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
-        response_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
+        response_deserializer=payments__bills__service__pb2.SubscriptionsObject.FromString,
         )
 
 
-class SuscriptionServicer(object):
+class SubscriptionServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def GetSuscriptionById(self, request, context):
+  def GetSubscriptionById(self, request, context):
     """Get the details of a suscription
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetSuscriptionList(self, request, context):
+  def GetSubscriptionList(self, request, context):
     """Get a listo of the descriptions previously created
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CreateSuscription(self, request, context):
+  def CreateSubscription(self, request, context):
     """Create a new suscription
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def CancelSuscription(self, request, context):
+  def CancelSubscription(self, request, context):
     """Cancel a suscription
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateSuscription(self, request, context):
+  def UpdateSubscription(self, request, context):
     """update a suscription
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -292,34 +292,169 @@ class SuscriptionServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-def add_SuscriptionServicer_to_server(servicer, server):
+def add_SubscriptionServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'GetSuscriptionById': grpc.unary_unary_rpc_method_handler(
-          servicer.GetSuscriptionById,
+      'GetSubscriptionById': grpc.unary_unary_rpc_method_handler(
+          servicer.GetSubscriptionById,
           request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
-          response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+          response_serializer=payments__bills__service__pb2.SubscriptionsObject.SerializeToString,
       ),
-      'GetSuscriptionList': grpc.unary_stream_rpc_method_handler(
-          servicer.GetSuscriptionList,
+      'GetSubscriptionList': grpc.unary_stream_rpc_method_handler(
+          servicer.GetSubscriptionList,
           request_deserializer=payments__bills__service__pb2.ListRequest.FromString,
-          response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+          response_serializer=payments__bills__service__pb2.SubscriptionsObject.SerializeToString,
       ),
-      'CreateSuscription': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateSuscription,
-          request_deserializer=payments__bills__service__pb2.ChargeObject.FromString,
-          response_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
+      'CreateSubscription': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateSubscription,
+          request_deserializer=payments__bills__service__pb2.SubscriptionsObject.FromString,
+          response_serializer=payments__bills__service__pb2.SubscriptionsObject.SerializeToString,
       ),
-      'CancelSuscription': grpc.unary_unary_rpc_method_handler(
-          servicer.CancelSuscription,
+      'CancelSubscription': grpc.unary_unary_rpc_method_handler(
+          servicer.CancelSubscription,
           request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
           response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
       ),
-      'UpdateSuscription': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateSuscription,
+      'UpdateSubscription': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateSubscription,
           request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
-          response_serializer=payments__bills__service__pb2.ChargeObject.SerializeToString,
+          response_serializer=payments__bills__service__pb2.SubscriptionsObject.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'payments_bills_service.Suscription', rpc_method_handlers)
+      'payments_bills_service.Subscription', rpc_method_handlers)
+  server.add_generic_rpc_handlers((generic_handler,))
+
+
+class PlansStub(object):
+  # missing associated documentation comment in .proto file
+  pass
+
+  def __init__(self, channel):
+    """Constructor.
+
+    Args:
+      channel: A grpc.Channel.
+    """
+    self.GetPlanById = channel.unary_unary(
+        '/payments_bills_service.Plans/GetPlanById',
+        request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
+        response_deserializer=payments__bills__service__pb2.PlansObject.FromString,
+        )
+    self.GetPlansList = channel.unary_stream(
+        '/payments_bills_service.Plans/GetPlansList',
+        request_serializer=payments__bills__service__pb2.ListRequest.SerializeToString,
+        response_deserializer=payments__bills__service__pb2.PlansObject.FromString,
+        )
+
+
+class PlansServicer(object):
+  # missing associated documentation comment in .proto file
+  pass
+
+  def GetPlanById(self, request, context):
+    """Get a plan by ID
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetPlansList(self, request, context):
+    """Get a list of created plans
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+
+def add_PlansServicer_to_server(servicer, server):
+  rpc_method_handlers = {
+      'GetPlanById': grpc.unary_unary_rpc_method_handler(
+          servicer.GetPlanById,
+          request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
+          response_serializer=payments__bills__service__pb2.PlansObject.SerializeToString,
+      ),
+      'GetPlansList': grpc.unary_stream_rpc_method_handler(
+          servicer.GetPlansList,
+          request_deserializer=payments__bills__service__pb2.ListRequest.FromString,
+          response_serializer=payments__bills__service__pb2.PlansObject.SerializeToString,
+      ),
+  }
+  generic_handler = grpc.method_handlers_generic_handler(
+      'payments_bills_service.Plans', rpc_method_handlers)
+  server.add_generic_rpc_handlers((generic_handler,))
+
+
+class RefoundsStub(object):
+  # missing associated documentation comment in .proto file
+  pass
+
+  def __init__(self, channel):
+    """Constructor.
+
+    Args:
+      channel: A grpc.Channel.
+    """
+    self.GetRefoundById = channel.unary_unary(
+        '/payments_bills_service.Refounds/GetRefoundById',
+        request_serializer=payments__bills__service__pb2.GetByIdCharge.SerializeToString,
+        response_deserializer=payments__bills__service__pb2.RefoundObject.FromString,
+        )
+    self.GetRefounsList = channel.unary_stream(
+        '/payments_bills_service.Refounds/GetRefounsList',
+        request_serializer=payments__bills__service__pb2.ListRequest.SerializeToString,
+        response_deserializer=payments__bills__service__pb2.RefoundObject.FromString,
+        )
+    self.CreateRefound = channel.unary_unary(
+        '/payments_bills_service.Refounds/CreateRefound',
+        request_serializer=payments__bills__service__pb2.RefoundObject.SerializeToString,
+        response_deserializer=payments__bills__service__pb2.RefoundObject.FromString,
+        )
+
+
+class RefoundsServicer(object):
+  # missing associated documentation comment in .proto file
+  pass
+
+  def GetRefoundById(self, request, context):
+    """Get a Refound by ID
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetRefounsList(self, request, context):
+    """get a list of refounds created
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateRefound(self, request, context):
+    """create a refound
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+
+def add_RefoundsServicer_to_server(servicer, server):
+  rpc_method_handlers = {
+      'GetRefoundById': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRefoundById,
+          request_deserializer=payments__bills__service__pb2.GetByIdCharge.FromString,
+          response_serializer=payments__bills__service__pb2.RefoundObject.SerializeToString,
+      ),
+      'GetRefounsList': grpc.unary_stream_rpc_method_handler(
+          servicer.GetRefounsList,
+          request_deserializer=payments__bills__service__pb2.ListRequest.FromString,
+          response_serializer=payments__bills__service__pb2.RefoundObject.SerializeToString,
+      ),
+      'CreateRefound': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateRefound,
+          request_deserializer=payments__bills__service__pb2.RefoundObject.FromString,
+          response_serializer=payments__bills__service__pb2.RefoundObject.SerializeToString,
+      ),
+  }
+  generic_handler = grpc.method_handlers_generic_handler(
+      'payments_bills_service.Refounds', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

@@ -7,6 +7,7 @@ import payments_bills_service_pb2_grpc
 import stripe
 from grpc_controllers.charges import * 
 from grpc_controllers.customers import *
+from grpc_controllers.subscription import *
 
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
@@ -18,6 +19,8 @@ def serve():
         ChargesServicer(), server)
     payments_bills_service_pb2_grpc.add_CustomersServicer_to_server(
         CustomersServicer(), server)
+    payments_bills_service_pb2_grpc.add_SubscriptionServicer_to_server(
+        SubscriptionServicer(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     try:
